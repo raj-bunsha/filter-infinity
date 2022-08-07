@@ -1,0 +1,65 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{% static './css/home.css'%}">
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+
+    <header class="header-area overlay">
+        <nav class="navbar navbar-expand-md navbar-dark">
+            <div class="container">
+                <a href="#" class="navbar-brand"><img src="{% static './images/Vector.png' %}" alt="" width="200px"
+                        id="logo146"></a>
+
+                <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#main-nav">
+                    <span class="menu-icon-bar"></span>
+                    <span class="menu-icon-bar"></span>
+                    <span class="menu-icon-bar"></span>
+                </button>
+
+                <div id="main-nav" class="collapse navbar-collapse">
+                    <ul class="navbar-nav ml-auto">
+                        <li><a href="/" class="nav-item nav-link active">Home</a></li>
+                        <li><a href="/filter" class="nav-item nav-link">Filter</a></li>
+                        <!-- <li class="dropdown">
+                            <a href="#" class="nav-item nav-link" data-toggle="dropdown">Services</a>
+                            <div class="dropdown-menu">
+                                <a href="#" class="dropdown-item">Dropdown Item 1</a>
+                                <a href="#" class="dropdown-item">Dropdown Item 2</a>
+                                <a href="#" class="dropdown-item">Dropdown Item 3</a>
+                            </div>
+                        </li> -->
+                        <li class="dropdown">
+                            <a href="/upload_script" class="nav-item nav-link" data-toggle="dropdown">Script</a>
+                            <div class="dropdown-menu">
+                                <a href="/upload_script" class="dropdown-item">Add script</a>
+                                <a href="/archive" class="dropdown-item">Archive</a>
+                                <!-- <a href="#" class="dropdown-item">Dropdown Item 3</a>
+                                <a href="#" class="dropdown-item">Dropdown Item 4</a>
+                                <a href="#" class="dropdown-item">Dropdown Item 5</a> -->
+                            </div>
+                        </li>
+                        <li><a href="/documentation" class="nav-item nav-link">Documentation</a></li>
+                        <li><a href="mailto:rajbunsha@gmail.com" class="nav-item nav-link">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <div class="banner">
+            <div class="container">
+                <h1>{{title}}</h1>
+                <p>{{Note}}</p>
+                <a href="/"><button class="button button-primary">Home</button></a>
+            </div>
+        </div>
+    </header>
+</body>
+</html>
