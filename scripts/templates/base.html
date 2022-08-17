@@ -1,0 +1,46 @@
+{%load static%}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block title%}{%endblock%}</title>
+    <link rel="stylesheet" href="{% static './css/base.css' %}"">
+    {%block imports%}
+    {%endblock%}
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="header gradient__bg">
+        <!-- Navbar -->
+        <div class="gpt3__navbar">
+            <div class="gpt3__navbar-links">
+                <div class="gpt3__navbar-links_logo">
+                    <img src={% static './images/Vectorlight.png' %} />
+                </div>
+                <div class="gpt3__navbar-links_container">
+                    <p><a href="/">Home</a></p>
+                    <p><a href="/filter">Filter</a></p>
+                    <p><a href="/upload_script">Script</a></p>
+                    <p><a href="/documentation">Documentation</a></p>
+                    <p><a href="mailto:rajbunsha@gmail.com">Contact</a></p>
+                </div>
+            </div>
+            <div class="gpt3__navbar-sign">
+                <p>Sign in</p>
+                <button type="button">Sign up</button>
+            </div>
+        </div>
+        {%block header_content%}
+        {%endblock%}
+    </div>
+    <!-- Content -->
+    {%block content%}
+
+    {%endblock%}
+</body>
+
+</html>

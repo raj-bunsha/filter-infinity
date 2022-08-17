@@ -1,0 +1,33 @@
+.content h1
+{
+    display: inline;
+    /* margin-top: 0;
+    padding-top: 0; */
+    font-size:3.5rem;
+    background: var(--gradient-text);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: var(--font-family);
+    line-height:5rem;
+}
+.content p
+{
+    display: inline;
+    /* margin-top: 0;
+    padding-top: 0; */
+    font-size:2rem;
+    background: var(--gradient-text);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-family: var(--font-family);
+}
+.content
+{
+    position: absolute;
+    text-align: center;
+    top: 45%;
+    height:100%;
+    width:100%;
+}
