@@ -1,128 +1,120 @@
+{%extends 'base.html'%}
 {%load static%}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Documentation</title>
-    <link rel="stylesheet" href="{% static './css/documentation.css' %}">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.1.3/css/bootstrap.min.css">
-    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-    <script>
-        jQuery(function ($) {
-            $(window).on('scroll', function () {
-                if ($(this).scrollTop() >= 200) {
-                    $('.navbar').addClass('fixed-top');
-                    $('.nav-item').addClass('fixed-top');
-                    $('#logo146').attr("src", "{% static './images/Vectorlight.png' %}");
-                } else if ($(this).scrollTop() == 0) {
-                    $('.nav-item').removeClass('fixed-top');
-                    $('.navbar').removeClass('fixed-top');
-                    $('#logo146').attr("src", "{% static './images/Vector.png' %}");
-                }
-            });
+{%block title%}Documentation{%endblock%}
+{%block imports%}
+<link rel="stylesheet" href="{% static './css/documentation.css' %}">
+{%endblock%}
+{%block header_content%}
 
-            function adjustNav() {
-                var winWidth = $(window).width(),
-                    dropdown = $('.dropdown'),
-                    dropdownMenu = $('.dropdown-menu');
+<div class="title">
+    <h1>Documentation</h1>
 
-                if (winWidth >= 768) {
-                    dropdown.on('mouseenter', function () {
-                        $(this).addClass('show')
-                            .children(dropdownMenu).addClass('show');
-                    });
-
-                    dropdown.on('mouseleave', function () {
-                        $(this).removeClass('show')
-                            .children(dropdownMenu).removeClass('show');
-                    });
-                } else {
-                    dropdown.off('mouseenter mouseleave');
-                }
-            }
-
-            $(window).on('resize', adjustNav);
-
-            adjustNav();
-        });
-    </script>
-</head>
-<body>
-    <header class="header-area overlay">
-        <nav class="navbar navbar-expand-md navbar-dark">
-            <div class="container">
-                <a href="#" class="navbar-brand"><img src="{% static './images/Vector.png' %}" alt="" width="200px" id="logo146"></a>
-
-                <button type="button" class="navbar-toggler collapsed" data-toggle="collapse" data-target="#main-nav">
-                    <span class="menu-icon-bar"></span>
-                    <span class="menu-icon-bar"></span>
-                    <span class="menu-icon-bar"></span>
-                </button>
-
-                <div id="main-nav" class="collapse navbar-collapse">
-                    <ul class="navbar-nav ml-auto">
-                        <li><a href="/" class="nav-item nav-link">Home</a></li>
-                        <li><a href="/filter" class="nav-item nav-link">Filter</a></li>
-                        <!-- <li class="dropdown">
-                            <a href="#" class="nav-item nav-link" data-toggle="dropdown">Services</a>
-                            <div class="dropdown-menu">
-                                <a href="#" class="dropdown-item">Dropdown Item 1</a>
-                                <a href="#" class="dropdown-item">Dropdown Item 2</a>
-                                <a href="#" class="dropdown-item">Dropdown Item 3</a>
-                            </div>
-                        </li> -->
-                        <li class="dropdown">
-                            <a href="/upload_script" class="nav-item nav-link" data-toggle="dropdown">Script</a>
-                            <div class="dropdown-menu">
-                                <a href="/upload_script" class="dropdown-item">Add script</a>
-                                <a href="/archive" class="dropdown-item">Archive</a>
-                                <!-- <a href="#" class="dropdown-item">Dropdown Item 3</a>
-                                <a href="#" class="dropdown-item">Dropdown Item 4</a>
-                                <a href="#" class="dropdown-item">Dropdown Item 5</a> -->
-                            </div>
-                        </li>
-                        <li><a href="/documentation" class="nav-item nav-link active">Documentation</a></li>
-                        <li><a href="mailto:rajbunsha@gmail.com" class="nav-item nav-link">Contact</a></li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-    </header>
-    <div class="content">
-        <h1>Documentation</h1>
-        <p>
-            Libraries: OpenCV,Pillow,Scipy,Scikit-learn,matplotlib
-            <br>
-            Languages: python
-            <br>
-            Main function: convert(img)
-            <br>
-            <br>
-            Your can only have python as your input file. The input file should not open a contents of server nor should it try to open a window.
-            <ul>
-                <li>It must have a function named convert that takes an image as an input and returns a filtered image.</li>
-                <li>There can be other functions in the file.</li>
-                <li>The file could have necessary imports of libraries only as mentioned above.</li>
-                <li>The file should not have any unnecessary imports.</li>
-                <li>The file should not have any unnecessary functions.</li>
-                <li>It should not try deleting or modifying any files.</li>
-                <li>It should not try to connect to remote server or send any user data elsewhere. </li>
-                <li>Your script will be monitored over the runtime.</li>
-            </ul>
-            The img in the function that will be of type numpy.ndarray i.e. the file format you get when you open a image using opencv.
-            You will have to return it in the same type.
-            You can convert it to different formats as per convience.
-            Machine learning models can be used to Filter and edit the image.
-            Please use scipy for the same.
-            Do mind in user privacy and security.
-            <br>
-            <br>
-            Thank you
-            <br>
-            Signing off(raj bunsha)
-
+</div>
+<div class="gpt3__features section__padding" id="features">
+    <div class="gpt3__features-heading">
+        <h1 class="gradient__text">The Future is Now and You Just Need to Realize It. Step into Future Today. &amp; Make
+            it Happen.</h1>
+        <p>Request Early Access to Get Started</p>
     </div>
-</body>
-</html>
+    <div class="gpt3__features-container">
+        <div class="gpt3__features-container__feature">
+            <div class="gpt3__features-container__feature-title">
+                <div></div>
+                <h1>Libraries</h1>
+            </div>
+            <div class="gpt3__features-container_feature-text">
+                <p>OpenCV-Pillow-Scipy-(Scikit-learn)-matplotlib you can use any or all of these libraries</p>
+            </div>
+        </div>
+        <div class="gpt3__features-container__feature">
+            <div class="gpt3__features-container__feature-title">
+                <div></div>
+                <h1>Required functions</h1> 
+            </div>
+            <div class="gpt3__features-container_feature-text">
+                <p>There needs to be a main function named convert which takes in an argument of numpy.ndarray i.e. the file format you get when you open a image using opencv</p>
+            </div>
+        </div>
+        <div class="gpt3__features-container__feature">
+            <div class="gpt3__features-container__feature-title">
+                <div></div>
+                <h1>Unrequired imports and functions</h1>
+            </div>
+            <div class="gpt3__features-container_feature-text">
+                <p>Please try keeping the processing time as small as possible. Larger processing time may result in problems. </p>
+            </div>
+        </div>
+        <div class="gpt3__features-container__feature">
+            <div class="gpt3__features-container__feature-title">
+                <div></div>
+                <h1>Remote access or hacking attempt</h1>
+            </div>
+            <div class="gpt3__features-container_feature-text">
+                <p>This may lead to account ban and may lead to serious health problem for your digital life. Please avoid carrying out any cyberattack</p>
+            </div>
+        </div>
+        <div class="gpt3__features-container__feature">
+            <div class="gpt3__features-container__feature-title">
+                <div></div>
+                <h1>Analytics</h1>
+            </div>
+            <div class="gpt3__features-container_feature-text">
+                <p>Your script is monitored for any hacking attempt and analytics so be careful.</p>
+            </div>
+        </div>
+    </div>
+</div>
+{%endblock%}
+{%block content%}
+<div class="gpt3__whatgpt3 section__margin" id="wgpt3">
+    <div class="gpt3__whatgpt3-feature">
+        <div class="gpt3__features-container__feature">
+            <div class="gpt3__features-container__feature-title">
+                <div></div>
+                <h1>What is GPT-3</h1>
+            </div>
+            <div class="gpt3__features-container_feature-text">
+                <p>We so opinion friends me message as delight. Whole front do of plate heard oh ought. His defective
+                    nor convinced residence own. Connection has put impossible own apartments boisterous. At jointure
+                    ladyship an insisted so humanity he. Friendly bachelor entrance to on by.</p>
+            </div>
+        </div>
+    </div>
+    <div class="gpt3__whatgpt3-heading">
+        <h1 class="gradient__text">The possibilities are beyond your imagination</h1>
+        <p>Explore the Library</p>
+    </div>
+    <div class="gpt3__whatgpt3-container">
+        <div class="gpt3__features-container__feature">
+            <div class="gpt3__features-container__feature-title">
+                <div></div>
+                <h1>Chatbots</h1>
+            </div>
+            <div class="gpt3__features-container_feature-text">
+                <p>We so opinion friends me message as delight. Whole front do of plate heard oh ought.</p>
+            </div>
+        </div>
+        <div class="gpt3__features-container__feature">
+            <div class="gpt3__features-container__feature-title">
+                <div></div>
+                <h1>Knowledgebase</h1>
+            </div>
+            <div class="gpt3__features-container_feature-text">
+                <p>At jointure ladyship an insisted so humanity he. Friendly bachelor entrance to on by. As put
+                    impossible own apartments b</p>
+            </div>
+        </div>
+        <div class="gpt3__features-container__feature">
+            <div class="gpt3__features-container__feature-title">
+                <div></div>
+                <h1>Education</h1>
+            </div>
+            <div class="gpt3__features-container_feature-text">
+                <p>At jointure ladyship an insisted so humanity he. Friendly bachelor entrance to on by. As put
+                    impossible own apartments b</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{%endblock%}
