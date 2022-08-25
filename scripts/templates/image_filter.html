@@ -28,14 +28,18 @@
         </div>
         <h1 style="text-align:center">Filters</h1>
         <div class="filters">
-        {% for img,thumbnail in thumbnails.items%}
+        {% for img,data in thumbnails.items%}
         
             <div class="filter">
                 <button type="submit" onclick="send_request('{{img}}');">
-                    <img src="{{ thumbnail.url}}" alt="connect" style="max-height:300px">
+                    <img src="{{ data.img.url}}" alt="connect" style="max-height:300px">
+                    <div class="image__overlay">
+                        <div class="image__title"><h2>{{data.name}}</h2></div>
+                        <div class="image__description"><p>{{data.description}}</p></div>
+                    </div>
                 </button>
             </div>   
-            {%endfor%}
+        {%endfor%}
         </div>
     </div>
     <!-- <input type="file" name="image" accept="image/*" required id="image" /> -->
