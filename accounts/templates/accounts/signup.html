@@ -1,0 +1,52 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block title%}
+Signup
+{%endblock%}
+{%block imports%}
+<link href="{%static 'css/signup.css'%}" rel="stylesheet" type="text/css">
+{%endblock%}
+{%block header_content%}
+    <div class="header-content-inner">
+        <h1>Sign Up</h1>
+        <!-- <hr> -->
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="row">
+                <label for="name">Name:</label>
+                <input type="text" name="username" id="name"  placeholder="name" required>
+            </div>
+            <div class="row">
+                <label for="email">Email:</label>
+                <input type="email" name="email" id="email" placeholder="email" required>
+            </div>
+            <div class="row">
+                <label for="password">Password:</label>
+                <input type="password" name="password1" id="password" placeholder="password"" required>
+            </div>
+            <div class="row">
+                <label for="retypePassword">Confirm Password:</label>
+                <input type="password" name="password2" id="retypePassword" placeholder="confirm password" required>
+            </div>
+            <br>
+            <button type="submit" class="btn">Sign Up</button>
+        </form>
+        <!-- {{form}} -->
+    </div>
+    <script>
+        // if("{{errors}}")
+        // {
+            //     alert("{{errors}}");
+        // }
+        </script>
+{%endblock%}
+{%block content%}
+<div class="content">
+    {% for field, errors in errors.items %}
+    <h3>{{ field }}</h3>
+    {% for error in errors %}
+    <h6>{{error}}</h6>
+</div>
+{%endfor%}
+{%endfor%}
+{%endblock%}

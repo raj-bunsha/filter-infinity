@@ -1,0 +1,26 @@
+{%extends 'base.html'%}
+{%load static%}
+{%block title%}
+Signup
+{%endblock%}
+{%block imports%}
+<link href="{%static 'css/signin.css'%}" rel="stylesheet" type="text/css">
+{%endblock%}
+{%block header_content%}
+<div class="header-content-inner">
+    <h1>Sign In</h1>
+    <!-- <hr> -->
+    <form method="post" enctype="multipart/form-data">
+        {% csrf_token %}
+        <div class="row">
+            <label for="username">Username:</label>
+            <input type="username" name="username" id="username" placeholder="username" required>
+        </div>
+        <div class="row">
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" placeholder="password"" required>
+        </div>
+        <button type="submit" class="btn">Sign In</button>
+    </form>
+</div>
+{%endblock%}

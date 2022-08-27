@@ -7,9 +7,10 @@ import numpy as np
 from django.core.files.base import ContentFile
 from io import BytesIO
 import importlib
+from django.contrib.auth.decorators import login_required
 # Create your views here.
 
-
+@login_required(login_url='/signin/')
 def enter_script(request):
     if request.method == 'POST':
         form = UploadScriptForm(request.POST, request.FILES)
@@ -82,5 +83,9 @@ def image_filter(request):
         for i in data:
             img = i.image
             id = i.id
-            thumbnails[id] = img
+            name=i.name
+            description=i.description
+            thumbnails[id] = {"img": img, "name": name, "description": description}
+            # thumbnails[name]=name
+            # thumbnails[description]=description
     return render(request, 'image_filter.html', {"thumbnails": thumbnails})

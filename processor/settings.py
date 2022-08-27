@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'scripts',
+    'accounts',
 ]
 
 MIDDLEWARE = [
@@ -121,13 +122,17 @@ STATIC_URL = 'static/'
 STATICFILES_DIRS = [
     # BASE_DIR / "static",
     BASE_DIR / "scripts/static",
+    BASE_DIR / "accounts/static"
 ]
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # Base url to serve media files  
-MEDIA_URL = '/media/'  
-  
+MEDIA_URL = '/media/'
+LOGIN_REDIRECT_URL = "/"
+LOGOUT_REDIRECT_URL = "/"
+# AUTH_USER_MODEL = "accounts.Account"
+
 # Path where media is stored  
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')  

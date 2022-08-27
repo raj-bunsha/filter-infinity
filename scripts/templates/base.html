@@ -29,10 +29,16 @@
                     <p><a href="mailto:rajbunsha@gmail.com">Contact</a></p>
                 </div>
             </div>
+            {% if request.user.is_authenticated %}
             <div class="gpt3__navbar-sign">
-                <p>Sign in</p>
-                <button type="button">Sign up</button>
+                <a href="/logout"><button type="button">logout</button></a>
             </div>
+            {%else%}
+            <div class="gpt3__navbar-sign">
+                <p><a href="/signin">Sign in</a></p>
+                <a href="/signup"><button type="button">Sign up</button></a>
+            </div>
+            {%endif%}
         </div>
         {%block header_content%}
         {%endblock%}
