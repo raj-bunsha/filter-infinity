@@ -8,14 +8,14 @@ def signup(request):
     # print(RegisterationForm())
         if request.method == 'POST':
             form = UserCreationForm(request.POST)
-            login(request, user)
             # print(form.__dict__)
             # print(request.POST)
             if form.is_valid():
                 user = form.save()
+                login(request, user)
                 # authenticate(user)
 
-                return redirect('/1')
+                return redirect('/')
             else:
                 # print("PROBLEM")
                 # print(form.errors)
